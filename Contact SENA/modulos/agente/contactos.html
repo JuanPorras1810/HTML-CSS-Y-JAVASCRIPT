@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+</head>
+
+<body id="body-container">
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside id="main-sidebar">
+        <div class="sidebar">
+            <div class="sidebar-icon">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12v7c0 1.1.9 2 2 2h3v-8H4v-1c0-4.41 3.59-8 8-8s8 3.59 8 8v1h-3v8h3c1.1 0 2-.9 2-2v-7c0-5.52-4.42-10-10-10z" />
+                </svg>
+            </div>
+            <div class="sidebar-text">
+                <h2>Contact SENA</h2>
+                <p>Panel Agente</p>
+            </div>
+        </div>
+
+        <div class="sidebar-nav">
+            <p class="sidebar-title">MÓDULOS OPERATIVOS</p>
+            <a href="#" class="sidebar-link active">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.01-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.34.03.74-.25 1.02l-2.2 2.2z" />
+                </svg>
+                Contactos
+            </a>
+            <a href="#" class="sidebar-link">
+                <svg viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+
+                    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" d="M13 5v2M13 17v2M13 11v2" />
+
+                </svg>
+                Mis Tickets
+            </a>
+            <a href="/modulos/agente/tiempo.html" class="sidebar-link">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                </svg>
+                Mi Tiempo
+            </a>
+            <a href="#" class="sidebar-link">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z" />
+                </svg>
+                Mi Historial
+            </a>
+        </div>
+
+
+        <div class="sidebar-user-container">
+            <div class="user-popover" id="user-popover-menu">
+                <div class="popover-item" id="item-actualizar-datos">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l-.38 2.65c-.03.24.17.42.42.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
+                    </svg>
+                    <div class="text-box">
+                        <span>Actualizar Datos</span>
+                    </div>
+                </div>
+                <div class="popover-item logout">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" />
+                    </svg>
+                    <div class="text-box">
+                        <span>Cerrar Sesión</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-user" id="sidebar-user-trigger">
+                <div class="avatar-container">
+                    <img src="https://cdn-icons-png.flaticon.com/256/12225/12225881.png" class="user-avatar">
+                    <div class="status-dot"></div>
+                </div>
+                <div class="user-info">
+                    <p>USUARIO ACTUAL</p>
+                    <h4>(Nombre usuario)</h4>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+
+    <main>
+        <div class="header-container">
+            <div class="text-box">
+                <div class="module-title">
+                    <h2>Módulo de Contactos</h2>
+                </div>
+                <p>Gestiona las interacciones con clientes, atención de llamadas y registro de tiempos</p>
+            </div>
+
+            <!-- Botón de Hamburguesa -->
+            <button class="menu-hamburger" id="btn-hamburger">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="module-container">
+            <div class="actions-container">
+                <div class="session-badge">
+                    <span class="dot"></span>
+                    <span>Gestión de Hoy: Domingo, 12 De Julio De 2026</span>
+                </div>
+                <button class="btn-primary" id="btn-nuevo-contacto">+ Nuevo Contacto</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+
+                            <th>Cliente</th>
+                            <th>Campaña</th>
+                            <th>Tipo (Canal)</th>
+                            <th>Tipificación</th>
+                            <th>Observaciones</th>
+                            <th>Tiempo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <td class="col-cliente">Gabriel Gómez Vargas</td>
+                            <td><span class="col-campana">Ventas Cruzadas</span></td>
+                            <td>Llamada</td>
+                            <td>Tipificación</td>
+                            <td>Contacto con Gabriel Gómez Vargas - Ventas Cruzadas...</td>
+                            <td>
+                                <div class="time-box">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                                    </svg>
+                                    <span>14m 45s</span>
+                                </div>
+                            </td>
+                            <td><span class="col-estado">Escalado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL: NUEVO CONTACTO-->
+    <div class="modal-overlay" id="modal-nuevo-contacto">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title-box">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                    </svg>
+                    <h3>Registrar Gestión de Contacto</h3>
+                </div>
+                <button class="close-modal-btn" id="close-contacto-x">&times;</button>
+            </div>
+
+
+            <div class="modal-body">
+                <form class="operational-form" onsubmit="event.preventDefault();">
+                    <div class="client-info-card">
+                        <div class="col-left">
+                            <div class="info-field"><span class="label">Documento de Identidad</span><span
+                                    class="value"> 1000000003</span></div>
+                            <div class="info-field"><span class="label">Nombre del Cliente</span><span
+                                    class="value">Gabriel Gómez Vargas</span></div>
+                            <div class="info-field"><span class="label">Teléfono de Contacto</span><span
+                                    class="value">3112223344</span></div>
+                        </div>
+                        <div class="col-right">
+                            <div class="info-field"><span class="label">Teléfono Alternativo</span><span
+                                    class="value">No registrado</span></div>
+                            <div class="info-field"><span class="label">Correo Electrónico</span><span
+                                    class="value">ggomez@vargas.co</span></div>
+                            <div class="info-field"><span class="label">Dirección Residencial</span><span
+                                    class="value">Calle 67 # 9-14, Chapinero</span></div>
+                        </div>
+                        <div class="observation-highlight-box">
+                            <div class="info-field"><span class="label">Observación del Cliente</span></div>
+                            <div class="observation-highlight">Potencial cliente corporativo para fibra simétrica.</div>
+                        </div>
+                    </div>
+                    <div class="form-group full-width"><label>Motivo del Contacto</label><input type="text"
+                            class="form-control" value="Ventas Cruzadas"></div>
+
+
+
+                    <div class="operational-selectors-card">
+                        
+                        <div class="form-group">
+                            <label>Canal de Contacto</label>
+                            <div class="select-wrapper">
+                                <select class="form-control">
+                                    <option>Seleccione...</option>
+                                </select>
+                                <svg class="select-icon" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tipificación Operativa</label>
+                            <div class="select-wrapper">
+                                <select class="form-control">
+                                    <option>Seleccione...</option>
+                                </select>
+                                <svg class="select-icon" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                                </svg>
+                            </div>
+                        </div>
+
+            
+                        <div class="form-group">
+                            <label>Cierre del Caso</label>
+                            <div class="select-wrapper">
+                                <select id="select-cierre-caso" class="form-control select-dinamico-status">
+                                    <option>Cerrado</option>
+                                    <option>Abierto</option>
+                                    <option>Escalado</option>
+                                </select>
+                                <svg class="select-icon" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="form-group full-width"><label>Observaciones de la Gestión</label><textarea
+                            class="form-control" placeholder="Escriba aquí el resumen detallado..."></textarea>
+                    </div>
+                    <div id="box-ticket-seguimiento" class="ticket-followup-card d-none">
+                        <div class="ticket-card-header">
+
+                            <svg class="ticket-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="4" y1="2" x2="20" y2="2" />
+                                <line x1="4" y1="22" x2="20" y2="22" />
+                                <path d="M5 2C5 9, 10 12, 10 12C10 12, 5 15, 5 22" />
+                                <path d="M19 2C19 9, 14 12, 14 12C14 12, 19 15, 19 22" />
+                                <path d="M12 11L12 13" class="sand-stream" />
+                                <polygon points="7,21 17,21 12,18" class="sand-bottom" />
+                            </svg>
+                            <h5 class="ticket-title">Creación Obligatoria de Ticket de Seguimiento</h5>
+                        </div>
+                        <p class="ticket-subtitle">Al seleccionar este estado, el sistema requiere registrar la
+                            bitácora
+                            inicial del Ticket en la plataforma operativa.</p>
+                        <div class="form-group">
+                            <label>COMENTARIOS DEL CASO</label>
+                            <textarea class="form-control"
+                                placeholder="Escriba detalladamente los comentarios del caso, requerimientos técnicos, justificación o los detalles específicos del escalamiento..."></textarea>
+                        </div>
+                    </div>
+                    <!-- Botones de guardar y cerrar -->
+                    <div class="operational-footer">
+                        <button type="button" class="btn-discard" id="btn-descartar-contacto">Descartar
+                            Contacto</button>
+                        <button type="submit" class="btn-save-final" id="btn-guardar-contacto">Guardar y Finalizar
+                            Contacto</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: ACTUALIZAR DATOS-->
+    <div class="modal-overlay" id="modal-actualizar-datos">
+        <div class="modal-container-dark">
+            <div class="modal-header-dark">
+                <div class="modal-title-box">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5-4-8-4z" />
+                    </svg>
+                    <h3>Actualizar Datos de Agente</h3>
+                </div>
+                <button class="close-modal-btn" id="close-actualizar">&times;</button>
+            </div>
+
+            <div class="modal-body-dark">
+                <div class="avatar-preview-wrapper">
+                    <img src="https://cdn-icons-png.flaticon.com/256/12225/12225881.png" class="avatar-preview-circle">
+                    <p>Vista previa de tu foto de perfil</p>
+                </div>
+
+                <form class="dark-form" onsubmit="event.preventDefault();">
+                    <div class="form-group full-width">
+                        <label>Foto de Perfil</label>
+                        <div class="input-icon-group">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                            </svg>
+                            <input type="text" class="form-control-dark" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nombre Completo</label>
+                        <div class="input-icon-group">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5-4-8-4z" />
+                            </svg>
+                            <input type="text" class="form-control-dark" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <div class="input-icon-group">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            <input type="email" class="form-control-dark" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Departamento</label>
+                        <div class="input-icon-group">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <select class="form-control-dark">
+                                <option>Seleccione...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Municipio</label>
+                        <div class="input-icon-group">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <select class="form-control-dark">
+                                <option>Seleccione...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Barrio Residencial</label>
+                        <div class="input-icon-group">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                            </svg>
+                            <select class="form-control-dark">
+                                <option>Seleccione...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Dirección Residencial</label>
+                        <div class="input-icon-group">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <input type="text" class="form-control-dark" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Teléfono Principal</label>
+                        <div class="input-icon-group">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.01-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.34.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                            <input type="text" class="form-control-dark" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Teléfono Alternativo (Opcional)</label>
+                        <div class="input-icon-group">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.01-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.34.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                            <input type="text" class="form-control-dark" value="">
+                        </div>
+                    </div>
+
+                    <div class="dark-modal-footer">
+                        <button type="button" class="btn-cancel-dark" id="btn-cancelar-actualizar">Cancelar</button>
+                        <button type="submit" class="btn-save-dark">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z" />
+                            </svg>
+                            Guardar Cambios
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SCRIPTS DE COMPORTAMIENTO INTERACTIVO COMPLETO -->
+    <script>
+        const modalNuevoContacto = document.getElementById('modal-nuevo-contacto');
+        const modalActualizarDatos = document.getElementById('modal-actualizar-datos');
+        const userTrigger = document.getElementById('sidebar-user-trigger');
+        const userPopover = document.getElementById('user-popover-menu');
+
+
+        // Elementos del Menú Lateral Móvil
+        const btnHamburger = document.getElementById('btn-hamburger');
+        const mainSidebar = document.getElementById('main-sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+        // Lógica de apertura/cierre de la Hamburguesa Móvil
+        btnHamburger.addEventListener('click', () => {
+            mainSidebar.classList.add('show');
+            sidebarOverlay.classList.add('show');
+        });
+
+        sidebarOverlay.addEventListener('click', () => {
+            mainSidebar.classList.remove('show');
+            sidebarOverlay.classList.remove('show');
+        });
+
+        // Nuevo Contacto
+        document.getElementById('btn-nuevo-contacto').addEventListener('click', () => modalNuevoContacto.classList.add('show'));
+        document.getElementById('close-contacto-x').addEventListener('click', () => modalNuevoContacto.classList.remove('show'));
+        document.getElementById('btn-descartar-contacto').addEventListener('click', () => modalNuevoContacto.classList.remove('show'));
+
+        // Menú flotante de Perfil (Esquina inferior)
+        userTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            userTrigger.classList.toggle('active');
+            userPopover.classList.toggle('show');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!userPopover.contains(e.target) && !userTrigger.contains(e.target)) {
+                userTrigger.classList.remove('active');
+                userPopover.classList.remove('show');
+            }
+        });
+
+        // Abrir Modal de Actualizar Datos y cerrar el menú móvil y popover simultáneamente
+        document.getElementById('item-actualizar-datos').addEventListener('click', () => {
+            userPopover.classList.remove('show');
+            userTrigger.classList.remove('active');
+            mainSidebar.classList.remove('show');
+            sidebarOverlay.classList.remove('show');
+            modalActualizarDatos.classList.add('show');
+        });
+
+        // Cerrar Modal de Actualizar Datos
+        document.getElementById('close-actualizar').addEventListener('click', () => modalActualizarDatos.classList.remove('show'));
+        document.getElementById('btn-cancelar-actualizar').addEventListener('click', () => modalActualizarDatos.classList.remove('show'));
+
+
+
+
+
+
+
+
+
+
+        // Seleccionamos el select y la caja del ticket
+        const selectCierre = document.getElementById('select-cierre-caso');
+        const boxTicket = document.getElementById('box-ticket-seguimiento');
+
+        // Creamos una función reutilizable para evaluar el estado
+        function evaluarEstadoCierre() {
+            if (!selectCierre || !boxTicket) return;
+
+            // Obtenemos el texto de la opción seleccionada
+            const estadoSeleccionado = selectCierre.options[selectCierre.selectedIndex].text.toLowerCase().trim();
+
+            // Si es "cerrado" o "escalado", mostramos el cuadro
+            if (estadoSeleccionado === 'abierto' || estadoSeleccionado === 'escalado') {
+                boxTicket.classList.remove('d-none');
+            } else {
+                // Si es "abierto", lo ocultamos
+                boxTicket.classList.add('d-none');
+            }
+        }
+
+        // 1. Escuchamos los cambios manuales del usuario
+        selectCierre.addEventListener('change', evaluarEstadoCierre);
+
+        // 2. Ejecutamos la función inmediatamente al cargar la página
+        // Esto hace que funcione con "Cerrado" desde el primer instante sin esperar un clic
+        evaluarEstadoCierre();
+
+
+
+
+
+        // Función automática para pintar los estados según el texto de la celda
+        function automatizarEstadosTabla() {
+            const etiquetas = document.querySelectorAll('.col-estado');
+
+            etiquetas.forEach(etiqueta => {
+                const estadoReal = etiqueta.textContent.trim().toLowerCase();
+
+                if (estadoReal === 'abierto' || estadoReal === 'escalado') {
+                    etiqueta.classList.add('estado-pendiente');
+                    etiqueta.classList.remove('estado-resuelto');
+                } else if (estadoReal === 'resuelto') {
+                    etiqueta.classList.add('estado-resuelto');
+                    etiqueta.classList.remove('estado-pendiente');
+                }
+            });
+        }
+
+        // Ejecutar la función inmediatamente al cargar la página
+        automatizarEstadosTabla();
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
