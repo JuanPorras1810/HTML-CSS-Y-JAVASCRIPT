@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReservaRest - Cocina</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/storage.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/modules.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <div class="app-container active" id="appView">
+    <!-- Header Móvil -->
+    <header class="mobile-header">
+      <button class="hamburger-btn" onclick="toggleSidebar()">☰</button>
+      <div class="mobile-brand">
+        <span>🍽️</span>
+        <span>ReservaRest</span>
+      </div>
+    </header>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <aside class="sidebar">
+      <div class="brand">
+        <span>🍽️</span>
+        <span>ReservaRest</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" data-section="pedidos" onclick="activarSeccion('pedidos')">🍽️ Pedidos /
+          Platos</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="btn-logout" id="btnLogout" onclick="salirDeLaApp()">🚪 Salir</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- PEDIDOS / COCINA -->
+      <section class="section" id="section-pedidos">
+        <div class="section-header">
+          <h1>Pedidos / Cocina</h1>
+          <p>Registro de platos en preparación y posterior envío a despachos</p>
+        </div>
+
+        <div class="actions-bar">
+          <button class="btn-primary" onclick="abrirModalPedido()">+ Nuevo pedido</button>
+        </div>
+
+        <div class="card table-container">
+          <h3 class="table-title">Pedidos en cocina</h3>
+          <table class="table-main">
+            <thead>
+              <tr>
+                <th>MESA</th>
+                <th>PLATO Y CANTIDAD</th>
+                <th>ESTADO COCINA</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody id="tablaPedidosBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+
+</html>

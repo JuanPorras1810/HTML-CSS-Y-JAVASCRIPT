@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReservaRest - Despacho</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/storage.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/modules.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <div class="app-container active" id="appView">
+    <!-- Header Móvil -->
+    <header class="mobile-header">
+      <button class="hamburger-btn" onclick="toggleSidebar()">☰</button>
+      <div class="mobile-brand">
+        <span>🍽️</span>
+        <span>ReservaRest</span>
+      </div>
+    </header>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <aside class="sidebar">
+      <div class="brand">
+        <span>🍽️</span>
+        <span>ReservaRest</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" data-section="despachos" onclick="activarSeccion('despachos')">🛵
+          Despachos</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="btn-logout" id="btnLogout" onclick="salirDeLaApp()">🚪 Salir</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- DESPACHOS -->
+      <section class="section active" id="section-despachos">
+        <div class="section-header">
+          <h1>Despachos</h1>
+          <p>Control de entrega de pedidos listos</p>
+        </div>
+
+        <div class="mesas-grid">
+          <div class="card-mesa">
+            <span>🛵</span>
+            <h3 id="despachosActivosNum">0</h3>
+            <p class="detalles">Despachos activos</p>
+          </div>
+          <div class="card-mesa">
+            <span>🍽️</span>
+            <h3 id="platosPorEntregarNum">0</h3>
+            <p class="detalles">Platos por entregar</p>
+          </div>
+        </div>
+
+        <div class="card table-container">
+          <h3 class="table-title">Despachos en ruta</h3>
+          <table class="table-main">
+            <thead>
+              <tr>
+                <th>MESA</th>
+                <th>PLATO Y CANTIDAD</th>
+                <th>ESTADO</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody id="tablaDespachosBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

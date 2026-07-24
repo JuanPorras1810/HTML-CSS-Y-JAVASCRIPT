@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReservaRest - Mesero</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/storage.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/modules.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <div class="app-container active" id="appView">
+    <!-- Header Móvil -->
+    <header class="mobile-header">
+      <button class="hamburger-btn" onclick="toggleSidebar()">☰</button>
+      <div class="mobile-brand">
+        <span>🍽️</span>
+        <span>ReservaRest</span>
+      </div>
+    </header>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <aside class="sidebar">
+      <div class="brand">
+        <span>🍽️</span>
+        <span>ReservaRest</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" data-section="mesas" onclick="activarSeccion('mesas')">🪑 Mesas</button>
+        <button class="nav-btn" data-section="reservas" onclick="activarSeccion('reservas')">📅 Reservas</button>
+        <button class="nav-btn" data-section="pedidos" onclick="activarSeccion('pedidos')">🍽️ Pedidos / Platos</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="btn-logout" id="btnLogout" onclick="salirDeLaApp()">🚪 Salir</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- MESAS -->
+      <section class="section active" id="section-mesas">
+        <div class="section-header">
+          <h1>Gestión de Mesas</h1>
+          <p>Estado actual de las mesas del restaurante</p>
+        </div>
+
+        <div class="mesas-grid" id="gridMesas"></div>
+
+        <div class="card table-container">
+          <h3 class="table-title">Gestión de mesas</h3>
+          <table class="table-main">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>CAPACIDAD</th>
+                <th>ZONA</th>
+                <th>ESTADO</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody id="tablaMesasBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- RESERVAS -->
+      <section class="section" id="section-reservas">
+        <div class="section-header">
+          <h1>Reservas</h1>
+          <p>Gestión de reservas de mesas</p>
+        </div>
+
+        <div class="actions-bar">
+          <button class="btn-primary" onclick="abrirModalReserva()">+ Nueva reserva</button>
+        </div>
+
+        <div class="card table-container">
+          <h3 class="table-title">Todas las reservas</h3>
+          <table class="table-main">
+            <thead>
+              <tr>
+                <th>CLIENTE</th>
+                <th>TELÉFONO</th>
+                <th>MESA</th>
+                <th>FECHA Y HORA</th>
+                <th>PERSONAS</th>
+                <th>NOTAS</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody id="tablaReservasBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PEDIDOS -->
+      <section class="section" id="section-pedidos">
+        <div class="section-header">
+          <h1>Pedidos / Cocina</h1>
+          <p>Registro de platos en preparación y posterior envío a despachos</p>
+        </div>
+
+        <div class="actions-bar">
+          <button class="btn-primary" onclick="abrirModalPedido()">+ Nuevo pedido</button>
+        </div>
+
+        <div class="card table-container">
+          <h3 class="table-title">Pedidos en cocina</h3>
+          <table class="table-main">
+            <thead>
+              <tr>
+                <th>MESA</th>
+                <th>PLATO Y CANTIDAD</th>
+                <th>ESTADO COCINA</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody id="tablaPedidosBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- MODALES -->
+      <div class="modal-overlay" id="modalPedido">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Nuevo pedido</h2>
+            <button class="modal-close" onclick="cerrarModalPedido()">&times;</button>
+          </div>
+          <form id="formPedido" onsubmit="guardarPedido(event)">
+            <div class="form-group">
+              <label for="pedidoMesa">Mesa</label>
+              <select id="pedidoMesa" required></select>
+            </div>
+            <div id="contenedorPlatosDinamicos">
+            </div>
+            <div style="margin-bottom: 1.2rem;">
+              <button type="button" class="btn-secondary btn-sm" onclick="agregarFilaPlatoModal()" style="width: 100%;">
+                + Agregar otro plato
+              </button>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn-secondary" onclick="cerrarModalPedido()">Cancelar</button>
+              <button type="submit" class="btn-primary">Guardar pedido</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+
+  <div class="modal-overlay" id="modalReserva">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Nueva reserva</h2>
+        <button class="modal-close" onclick="cerrarModalReserva()">&times;</button>
+      </div>
+      <form id="formReserva" onsubmit="guardarReserva(event)" autocomplete="off">
+        <div class="form-group">
+          <label for="reservaCliente">Cliente</label>
+          <input type="text" id="reservaCliente" maxlength="40" placeholder="Nombre completo" autocomplete="off" />
+          <span id="errorReservaCliente" class="error-msg"></span>
+        </div>
+        <div class="form-group">
+          <label for="reservaTelefono">Teléfono</label>
+          <input type="text" id="reservaTelefono" maxlength="11" placeholder="Ej: 3001234567" autocomplete="off" />
+          <span id="errorReservaTelefono" class="error-msg"></span>
+        </div>
+        <div class="form-group">
+          <label for="reservaMesa">Mesa</label>
+          <select id="reservaMesa" required></select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reservaFecha">Fecha</label>
+            <input type="date" id="reservaFecha" />
+            <span id="errorReservaFecha" class="error-msg"></span>
+          </div>
+          <div class="form-group">
+            <label for="reservaHora">Hora</label>
+            <input type="time" id="reservaHora" />
+            <span id="errorReservaHora" class="error-msg"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="reservaPersonas">Personas</label>
+          <input type="number" id="reservaPersonas" min="1" value="2" autocomplete="off"
+            placeholder="Elige un numero entre 1-10" />
+          <span id="errorReservaPersonas" class="error-msg"></span>
+        </div>
+        <div class="form-group">
+          <label for="reservaNotas">Notas</label>
+          <textarea id="reservaNotas" rows="3" maxlength="150" placeholder="Alergias, celebración, etc."></textarea>
+          <span id="errorReservaNotas" class="error-msg"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="cerrarModalReserva()">Cancelar</button>
+          <button type="submit" class="btn-primary">Guardar Reserva</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </main>
+  </div>
+</body>
+
+</html>
